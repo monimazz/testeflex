@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "teste"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -8,6 +8,7 @@ output:
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(tidyverse)
 ```
 
 Column {data-width=650}
@@ -16,7 +17,9 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-
+mtcars %>%
+  ggplot(aes(mpg, cyl)) +
+  geom_point()
 ```
 
 Column {data-width=350}
